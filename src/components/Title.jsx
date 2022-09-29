@@ -14,7 +14,6 @@ export default function Title() {
   }, [theme.value]);
 
   useEffect(() => {
-    // gsap.timeline
     gsap.fromTo(
       "#titleOne",
       {
@@ -22,7 +21,8 @@ export default function Title() {
         opacity: 0,
       },
       {
-        duration: 0.4,
+        ease: 'bounce',
+        duration: 0.7,
         y: 0,
         opacity: 1,
       }
@@ -34,7 +34,8 @@ export default function Title() {
         opacity: 0,
       },
       {
-        duration: 0.4,
+        ease: 'bounce',
+        duration: 1,
         y: 0,
         opacity: 1,
       }
@@ -46,7 +47,8 @@ export default function Title() {
         opacity: 0,
       },
       {
-        duration: 0.4,
+        ease: 'bounce',
+        duration: 1.3,
         y: 0,
         opacity: 1,
       }

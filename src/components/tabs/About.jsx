@@ -8,9 +8,9 @@ export default function About() {
   return (
     <div className="w-full flex justify-center my-10 ">
       <div className="w-4/5 flex justify-start dark:text-light text-dark text-xl">
-        <div className="flex gap-20 items-center">
-          <div>
-            <img className="object-contain rounded-lg" src={PersonalPhoto} alt="Lady+Me" />
+        <div className="flex gap-20 items-center flex-col md:flex-row">
+          <div className="overflow-hidden inline-block rounded-lg">
+            <img className="w-full h-full scale-150" src={PersonalPhoto} alt="Lady+Me" />
           </div>
           <div className="flex flex-col gap-10">
             <p>
@@ -20,7 +20,7 @@ export default function About() {
             <p>
               I love the process of building apps and writing lean code,
               experimenting with different frameworks and researching how teams
-              operate for when I earn my place in the industry.
+              operate as I earn my place in the industry.
             </p>
             <p>
               August, 2021, I graduated from the{" "}

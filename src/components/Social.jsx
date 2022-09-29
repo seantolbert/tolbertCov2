@@ -18,9 +18,9 @@ export default function Social() {
       theme.value === "dark"
         ? "13px 13px 26px #2f2f2f, -13px -13px 26px #5f5f5f"
         : "13px 13px 26px #a3a3a3, -13px -13px 26px #ffffff";
-    gsap.to("#Github", { duration: 1, boxShadow: shadowTheme });
-    gsap.to("#Linkedin", { duration: 3, boxShadow: shadowTheme });
-    gsap.to("#Codepen", { duration: 2, boxShadow: shadowTheme });
+    gsap.to("#Github", { duration: 1, boxShadow: shadowTheme, ease: 'bounce' });
+    gsap.to("#Linkedin", { duration: 1.3, boxShadow: shadowTheme, ease: 'bounce' });
+    gsap.to("#Codepen", { duration: 1.6, boxShadow: shadowTheme, ease: 'bounce' });
   }, [theme.value]);
 
   return (

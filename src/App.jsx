@@ -1,4 +1,3 @@
-import "./App.css";
 import { useEffect, useContext } from "react";
 import { AppState } from "./main";
 import { batch } from "@preact/signals-react";

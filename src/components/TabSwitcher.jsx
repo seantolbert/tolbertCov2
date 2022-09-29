@@ -17,7 +17,7 @@ export default function TabSwitcher() {
           className={`dark:text-light text-dark font-bold border-dark dark:border-light ${
             selected.value === page && "border-b-4 "
           }`}
-        >
+        > 
           {page}
         </button>
       ))}

@@ -10,12 +10,12 @@ export const AppState = createContext();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AppState.Provider value={Context}>
+    <AppState.Provider value={Context}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
         </Routes>
-      </AppState.Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AppState.Provider>
   </React.StrictMode>
 );
