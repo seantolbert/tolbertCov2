@@ -6,6 +6,12 @@ import Cursor from "./components/Cursor";
 import ThemeController from "./components/ThemeController";
 import Title from "./components/Title";
 import TabSwitcher from "./components/TabSwitcher";
+import Portfolio from "./components/tabs/Portfolio";
+import About from "./components/tabs/About";
+import Resources from "./components/tabs/Resources";
+import Experience from "./components/tabs/Experience";
+import Gallery from "./components/tabs/Gallery";
+import Contact from "./components/Contact";
 
 function App() {
   const { theme, xPosition, yPosition, showCursor, selected } =
@@ -24,7 +30,6 @@ function App() {
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
   }, [theme.value]);
-  
 
   const handleMouseEnter = () => {
     showCursor.value = true;
@@ -52,6 +57,12 @@ function App() {
       <ThemeController />
       <Title />
       <TabSwitcher />
+      {selected.value === "Portfolio" && <Portfolio />}
+      {selected.value === "Experience" && <Experience />}
+      {selected.value === "About" && <About />}
+      {selected.value === "Resources" && <Resources />}
+      {selected.value === "Gallery" && <Gallery />}
+      <Contact />
     </div>
   );
 }

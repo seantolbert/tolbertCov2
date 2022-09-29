@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { AppState } from "../main";
-import gsap from "gsap";
+import {gsap} from "gsap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
