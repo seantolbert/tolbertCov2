@@ -15,7 +15,7 @@ export default function ThemeController() {
   const show = useSignal(false);
 
   return (
-    <div className="fixed right-0 sm:bottom-0 md:top-0 flex sm:flex-col-reverse md:flex-col items-center gap-5 p-2 rounded-xl h-fit group">
+    <div className="fixed right-0 sm:bottom-0 md:top-0 flex sm:flex-col-reverse md:flex-col items-center gap-5 p-2 rounded-xl h-fit group z-[1]">
       {show.value ? (
         <>
           {/* menu */}
@@ -57,7 +57,7 @@ export default function ThemeController() {
                 id="secondaryInput"
                 type="color"
                 name="main"
-                className="h-14 w-14 bg-transparent rounded-lg border-none cursor-pointer appearance-none "
+                className="h-14 w-14 bg-transparent rounded-lg border-none cursor-pointer appearance-none"
                 onChange={(e) => (chosen.value = e.target.value)}
                 value={chosen.value}
               />
