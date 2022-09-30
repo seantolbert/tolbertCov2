@@ -1,9 +1,10 @@
 import { signal } from "@preact/signals-react";
+import Values from "values.js";
 
 function AdminControl() {
   const theme = signal(null);
   const chosen = signal("#11cbd1");
-  const highlight = signal("#d1c111");
+  const highlight = signal("#f54842");
   const xPosition = signal(null);
   const yPosition = signal(null);
   const showCursor = signal(false);

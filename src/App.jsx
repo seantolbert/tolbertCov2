@@ -3,7 +3,7 @@ import { AppState } from "./main";
 import { batch } from "@preact/signals-react";
 import Cursor from "./components/Cursor";
 import ThemeController from "./components/ThemeController";
-import Title from "./components/Title";
+import Title from "./components/Title/Title";
 import TabSwitcher from "./components/TabSwitcher";
 import PortfolioHome from "./components/tabs/Portfolio/PortfolioHome";
 import About from "./components/tabs/About";
@@ -11,6 +11,7 @@ import Resources from "./components/tabs/Resources";
 import Experience from "./components/tabs/Experience";
 import Gallery from "./components/tabs/Gallery/Gallery";
 import Contact from "./components/Contact";
+import FourBars from "./animations/FourBar/FourBars";
 
 function App() {
   const { theme, xPosition, yPosition, showCursor, selected } =
@@ -54,7 +55,8 @@ function App() {
     >
       {/* <Cursor /> */}
       <ThemeController />
-      <div className="m-0 md:m-5 lg:m-7">
+      <FourBars />
+      <div className="m-0 md:mx-7 md:mt-7">
         <Title />
         <div className="h-screen">
           <TabSwitcher />
@@ -64,7 +66,7 @@ function App() {
           {selected.value === "Resources" && <Resources />}
           {selected.value === "Gallery" && <Gallery />}
         </div>
-        <Contact />
+        {/* <Contact /> */}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useContext } from "react";
-import { AppState } from "../main";
+import { AppState } from "../../main";
 import Social from "./Social";
 import gsap from "gsap";
 
