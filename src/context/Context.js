@@ -7,7 +7,7 @@ function AdminControl() {
   const xPosition = signal(null);
   const yPosition = signal(null);
   const showCursor = signal(false);
-  const selected = signal("About");
+  const selected = signal("Gallery");
 
   const handleThemeSwitch = () => {
     theme.value = theme.value === "dark" ? "light" : "dark";

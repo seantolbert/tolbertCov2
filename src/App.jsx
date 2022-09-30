@@ -5,11 +5,11 @@ import Cursor from "./components/Cursor";
 import ThemeController from "./components/ThemeController";
 import Title from "./components/Title";
 import TabSwitcher from "./components/TabSwitcher";
-import Portfolio from "./components/tabs/Portfolio";
+import PortfolioHome from "./components/tabs/Portfolio/PortfolioHome";
 import About from "./components/tabs/About";
 import Resources from "./components/tabs/Resources";
 import Experience from "./components/tabs/Experience";
-import Gallery from "./components/tabs/Gallery";
+import Gallery from "./components/tabs/Gallery/Gallery";
 import Contact from "./components/Contact";
 
 function App() {
@@ -54,17 +54,18 @@ function App() {
     >
       {/* <Cursor /> */}
       <ThemeController />
-      <div className="m-0 md:m-5 lg:m-7"></div>
-      <Title />
-      <div className="h-screen">
-        <TabSwitcher />
-        {selected.value === "Portfolio" && <Portfolio />}
-        {selected.value === "Experience" && <Experience />}
-        {selected.value === "About" && <About />}
-        {selected.value === "Resources" && <Resources />}
-        {selected.value === "Gallery" && <Gallery />}
+      <div className="m-0 md:m-5 lg:m-7">
+        <Title />
+        <div className="h-screen">
+          <TabSwitcher />
+          {selected.value === "Portfolio" && <PortfolioHome />}
+          {selected.value === "Experience" && <Experience />}
+          {selected.value === "About" && <About />}
+          {selected.value === "Resources" && <Resources />}
+          {selected.value === "Gallery" && <Gallery />}
+        </div>
+        <Contact />
       </div>
-      <Contact />
     </div>
   );
 }

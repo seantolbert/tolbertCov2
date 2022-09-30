@@ -21,7 +21,7 @@ export default function Title() {
         opacity: 0,
       },
       {
-        ease: 'bounce',
+        ease: "bounce",
         duration: 0.7,
         y: 0,
         opacity: 1,
@@ -34,7 +34,7 @@ export default function Title() {
         opacity: 0,
       },
       {
-        ease: 'bounce',
+        ease: "bounce",
         duration: 1,
         y: 0,
         opacity: 1,
@@ -47,7 +47,7 @@ export default function Title() {
         opacity: 0,
       },
       {
-        ease: 'bounce',
+        ease: "bounce",
         duration: 1.3,
         y: 0,
         opacity: 1,
@@ -65,7 +65,11 @@ export default function Title() {
           Hey! my name is
           <span style={{ color: chosen.value }}> Sean</span>
         </p>
-        <p id="titleTwo" style={{ color: highlight.value }} className="text-4xl ">
+        <p
+          id="titleTwo"
+          style={{ color: highlight.value }}
+          className="text-4xl "
+        >
           I make <span style={{ color: highlight.value }}>shopify</span> themes
           and web apps
         </p>
