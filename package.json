@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "watch": "vite build --watch --mode development"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
@@ -15,9 +16,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@preact/signals-react": "^1.1.0",
     "axios": "^0.27.2",
-    "dotenv": "^16.0.2",
+    "dotenv": "^16.0.3",
     "firebase": "^9.10.0",
-    "firebase-tools": "^11.11.0",
+    "firebase-tools": "^11.13.0",
     "gsap": "^3.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

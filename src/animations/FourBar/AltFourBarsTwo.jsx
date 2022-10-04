@@ -4,7 +4,7 @@ import { AppState } from "../../main";
 import gsap from "gsap";
 import StreamBar from "./StreamBar";
 
-export default function FourBars() {
+export default function AltFourBarsTwo() {
   const { chosen, highlight } = useContext(AppState);
 
   useEffect(() => {
@@ -32,10 +32,17 @@ export default function FourBars() {
         ease: "ease",
       }
     );
-    gsap.to("#green", {
-      // zIndex: 10,
-      duration: 0,
-    });
+    gsap.fromTo(
+      "#green",
+      {
+        y: -3000
+      },
+      {
+        duration: 1,
+        y: 0,
+        ease: 'power1'
+      }
+    );
     gsap.to("#red", {
       // zIndex: 10,
       duration: 0,

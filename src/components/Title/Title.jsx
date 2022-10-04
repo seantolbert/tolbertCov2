@@ -56,7 +56,7 @@ export default function Title() {
   }, []);
 
   return (
-    <main className="text-dark dark:text-light h-screen">
+    <main className="z-[6] text-dark dark:text-light absolute flex items-center">
       <div className="flex flex-col gap-6 items-start">
         <p
           id="titleOne"
@@ -76,7 +76,7 @@ export default function Title() {
         <p id="titleThree" className="text-9xl">
           Come say <span style={{ color: chosen.value }}>Hi!</span>
         </p>
-        <Social />
+        {/* <Social /> */}
       </div>
     </main>
   );
