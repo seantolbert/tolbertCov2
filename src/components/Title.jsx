@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useContext } from "react";
-import { AppState } from "../../main";
-import Social from "./Social";
+import { AppState } from "../main";
 import gsap from "gsap";
 
 export default function Title() {
@@ -14,58 +13,7 @@ export default function Title() {
   }, [theme.value]);
 
   useEffect(() => {
-    gsap.fromTo(
-      "#titleOne",
-      {
-        x: '100%',
-        opacity: 0,
-        // backdropFilter: "blur(0)",
-        // background: "transparent",
-      },
-      {
-        ease: "power3",
-        duration: 3,
-        x: 0,
-        opacity: 1,
-        // background: "rgba(0, 0, 0, 0.3)",
-        // backdropFilter: "blur(10px)",
-      }
-    );
-    gsap.fromTo(
-      "#titleTwo",
-      {
-        x: '-100%',
-        opacity: 0,
-        // backdropFilter: "blur(0)",
-        // background: "transparent",
-      },
-      {
-        ease: "power3",
-        duration: 1.5,
-        delay: 3,
-        x: 0,
-        opacity: 1,
-        // background: "rgba(0, 0, 0, 0.3)",
-        // backdropFilter: "blur(10px)",
-      }
-    );
-    gsap.fromTo(
-      "#titleThree",
-      {
-        x: '100%',
-        opacity: 0,
-        // backdropFilter: "blur(0)",
-        // background: "transparent",
-      },
-      {
-        ease: "power3",
-        duration: 3,
-        x: 0,
-        opacity: 1,
-        // background: "rgba(0, 0, 0, 0.3)",
-        // backdropFilter: "blur(10px)",
-      }
-    );
+    gsap.fromTo
   }, []);
 
   return (

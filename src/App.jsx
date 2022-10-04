@@ -3,7 +3,7 @@ import { AppState } from "./main";
 import { batch } from "@preact/signals-react";
 import ThemeController from "./components/ThemeController";
 import Cursor from "./components/Cursor";
-import Title from "./components/Title/Title";
+import Title from "./components/Title";
 import TabSwitcher from "./components/TabSwitcher";
 import PortfolioHome from "./components/tabs/Portfolio/PortfolioHome";
 import About from "./components/tabs/About";
