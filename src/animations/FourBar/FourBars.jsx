@@ -2,83 +2,203 @@ import React, { useEffect } from "react";
 import { useContext } from "react";
 import { AppState } from "../../main";
 import gsap from "gsap";
-import StreamBar from "./StreamBar";
+import BlueStripe from "../../assets/BluePaint.png";
+import RedStripe from "../../assets/RedPaint.png";
+import YellowStripe from "../../assets/YellowPaint.png";
+import Bar from "../../assets/NegBar.png";
+import HalfBar from "../../assets/NegBarHalf.png";
 
-export default function FourBars() {
-  const { chosen, highlight } = useContext(AppState);
+export default function AltFourBars() {
+  const { theme } = useContext(AppState);
 
   useEffect(() => {
     gsap.fromTo(
-      "#highlightBar",
+      "#Bar1",
       {
-        opacity: 0,
+        y: 6,
+        ease: "none",
       },
       {
-        // zIndex: 4,
-        opacity: 1,
-        duration: 0.4,
-        ease: "ease",
+        duration: 1.5,
+        y: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
       }
     );
     gsap.fromTo(
-      "#chosenBar",
+      "#HalfBar",
       {
-        opacity: 0,
+        y: 6,
+        ease: "none",
       },
       {
-        // zIndex: 5,
-        opacity: 1,
-        duration: 0.4,
-        ease: "ease",
+        duration: 1.5,
+        y: 0,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
       }
     );
-    gsap.to("#green", {
-      // zIndex: 10,
-      duration: 0,
-    });
-    gsap.to("#red", {
-      // zIndex: 10,
-      duration: 0,
-    });
-    gsap.to("#amber", {
-      // zIndex: 10,
-      duration: 0,
-    });
-    gsap.to("#orange", {
-      // zIndex: 10,
-      duration: 0,
-    });
+    gsap.fromTo(
+      "#Bar2",
+      {
+        y: 6,
+        ease: "none",
+      },
+      {
+        duration: 1.5,
+        y: 0,
+        delay: 0.12,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      }
+    );
+    gsap.fromTo(
+      "#Bar3",
+      {
+        y: -6,
+        ease: "none",
+      },
+      {
+        duration: 1.5,
+        delay: 0.1,
+        y: 0,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      }
+    );
+    gsap.fromTo(
+      "#Bar4",
+      {
+        y: 10,
+        ease: "none",
+      },
+      {
+        duration: 1.5,
+        yoyo: true,
+        delay: 0.08,
+        y: 0,
+        repeat: -1,
+        ease: "none",
+      }
+    );
+    gsap.fromTo(
+      "#YellowStripe",
+      {
+        y: "-100%",
+      },
+      {
+        ease: "bounce",
+        duration: 3,
+        yoyo: true,
+        delay: 0.1,
+        y: 0,
+      }
+    );
+    gsap.fromTo(
+      "#RedStripe",
+      {
+        y: "100%",
+      },
+      {
+        ease: "bounce",
+        duration: 3,
+        delay: 0.15,
+        yoyo: true,
+        y: 0,
+      }
+    );
+    gsap.fromTo(
+      "#BlueStripe",
+      {
+        y: "100%",
+      },
+      {
+        ease: "bounce",
+        duration: 3,
+        yoyo: true,
+        y: 0,
+      }
+    );
   }, []);
 
   return (
-    <div className=" h-screen overflow-x-hidden relative flex justify-center items-center">
+    <div className="flex justify-center relative">
+      {/*  */}
+      {/* Bar1 + Bar3 */}
+      {/*  */}
       <div
-        id="orange"
-        className=" w-16 h-1/2  bg-orange-400 absolute -translate-x-64"
-      ></div>
-      <div id="amber" className=" w-16 h-1/2  bg-amber-400 absolute"></div>
-      <div id="chosenBar" className=" rotate-[-18deg] w-[2500px] absolute">
-        <StreamBar color={chosen.value} />
+        id="Bar1"
+        className="bar h-screen flex items-center absolute  -translate-x-48"
+      >
+        <img
+          src={Bar}
+          className={`h-5/6 w-full ${theme.value === "light" && "invert"}`}
+          alt="bar"
+        />
       </div>
       <div
-        id="red"
-        className="w-16 h-1/2  bg-rose-400 absolute translate-x-32"
-      ></div>
-      <div id="highlightBar" className="  rotate-[15deg] w-[2500px] absolute">
-        <StreamBar color={highlight.value} />
+        id="Bar3"
+        className="bar h-screen absolute flex items-center translate-x-16"
+      >
+        <img
+          src={Bar}
+          className={`h-5/6 w-full ${theme.value === "light" && "invert"}`}
+          alt="bar"
+        />
+      </div>
+      {/*  */}
+      {/* BlueStripe + RedStripe */}
+      {/*  */}
+      <div id="BlueStripe" className="w-screen h-screen absolute">
+        <img src={BlueStripe} className="w-full h-full" alt="BlueStripe" />
+      </div>
+      <div id="RedStripe" className="h-screen w-screen absolute">
+        <img src={RedStripe} className="w-full h-full" alt="RedStripe" />
+      </div>
+      {/*  */}
+      {/* Bar4 */}
+      {/*  */}
+      <div
+        id="Bar4"
+        className="bar h-screen flex items-center absolute translate-x-48"
+      >
+        <img
+          src={Bar}
+          className={`h-5/6 w-full ${theme.value === "light" && "invert"}`}
+          alt="bar"
+        />
+      </div>
+      {/*  */}
+      {/* Yellow Stripe */}
+      {/*  */}
+      <div id="YellowStripe" className="h-screen w-screen absolute">
+        <img src={YellowStripe} className="w-full h-full" alt="YellowStripe" />
+      </div>
+      {/* Bar 1.5 + Bar2 */}
+      <div
+        id="HalfBar"
+        className="bar h-screen flex items-center absolute  -translate-x-48"
+      >
+        <img
+          src={HalfBar}
+          className={`h-5/6 w-full ${theme.value === "light" && "invert"}`}
+          alt="bar"
+        />
       </div>
       <div
-        id="orange"
-        className="h-[100px] w-16 bg-orange-400 absolute -translate-x-64 -translate-y-[50px]"
-      ></div>
-      <div className="z-[] -translate-y-[159px] absolute h-16 bg-gradient-to-r from-green-400 to-rose-400 w-48"></div>
-      <div className="z-[] translate-y-[159px] absolute h-16 bg-gradient-to-r from-green-400 to-rose-400 w-48"></div>
-      <div className="z-[] translate-y-[159px] -translate-x-[195px] absolute h-16 bg-gradient-to-r from-orange-400 to-green-400 w-[80px]"></div>
-      <div className="z-[] -translate-y-[159px] -translate-x-[195px] absolute h-16 bg-gradient-to-r from-orange-400 to-green-400 w-[80px]"></div>
-      <div
-        id="green"
-        className="z-[10] w-16 h-1/2 bg-green-400 absolute -translate-x-32 flex justify-center"
-      ></div>
+        id="Bar2"
+        className="z-[5] bar h-screen flex items-center absolute -translate-x-16"
+      >
+        <img
+          src={Bar}
+          className={`h-5/6 w-full ${theme.value === "light" && "invert"}`}
+          alt="bar"
+        />
+      </div>
     </div>
   );
 }

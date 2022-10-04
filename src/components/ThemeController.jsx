@@ -15,7 +15,7 @@ export default function ThemeController() {
   const show = useSignal(false);
 
   return (
-    <div className="fixed right-0 sm:bottom-0 md:top-0 flex sm:flex-col-reverse md:flex-col items-center gap-5 p-2 rounded-xl h-fit group z-[1]">
+    <div className="fixed right-0 sm:bottom-0 md:top-0 flex sm:flex-col-reverse md:flex-col items-center gap-5 p-2 rounded-xl h-fit group z-[7]">
       {show.value ? (
         <>
           {/* menu */}

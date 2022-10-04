@@ -12,13 +12,10 @@ import Experience from "./components/tabs/Experience";
 import Gallery from "./components/tabs/Gallery/Gallery";
 import Contact from "./components/Contact";
 import FourBars from "./animations/FourBar/FourBars";
-import AltFourBars from './animations/FourBar/AltFourBars'
 
 function App() {
   const { theme, xPosition, yPosition, showCursor, selected } =
     useContext(AppState);
-
- 
 
   useEffect(() => {
     if (window.matchMedia("(prefers-colorScheme: 'light')").matches) {
@@ -58,20 +55,16 @@ function App() {
     >
       {/* <Cursor /> */}
       <ThemeController />
-      <AltFourBars />
-      {/* <FourBars /> */}
-      <div className="m-0 md:mx-7 md:mt-7">
-        <Title />
-        {/* <div className="h-screen"> */}
-          {/* <TabSwitcher /> */}
-          {selected.value === "Portfolio" && <PortfolioHome />}
-          {selected.value === "Experience" && <Experience />}
-          {selected.value === "About" && <About />}
-          {selected.value === "Resources" && <Resources />}
-          {/* {selected.value === "Gallery" && <Gallery />} */}
-        {/* </div> */}
-        {/* <Contact /> */}
-      </div>
+      <FourBars />
+      <Title />
+      {/* <TabSwitcher /> */}
+      {selected.value === "Portfolio" && <PortfolioHome />}
+      {selected.value === "Experience" && <Experience />}
+      {selected.value === "About" && <About />}
+      {selected.value === "Resources" && <Resources />}
+      {/* {selected.value === "Gallery" && <Gallery />} */}
+
+      {/* <Contact /> */}
     </div>
   );
 }

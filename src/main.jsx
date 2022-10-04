@@ -8,7 +8,7 @@ import Context from "./context/Context";
 export const AppState = createContext();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <AppState.Provider value={Context}>
         <Routes>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Routes>
       </AppState.Provider>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

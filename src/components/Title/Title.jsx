@@ -17,64 +17,78 @@ export default function Title() {
     gsap.fromTo(
       "#titleOne",
       {
-        y: 100,
+        x: '100%',
         opacity: 0,
+        // backdropFilter: "blur(0)",
+        // background: "transparent",
       },
       {
-        ease: "bounce",
-        duration: 0.7,
-        y: 0,
+        ease: "power3",
+        duration: 3,
+        x: 0,
         opacity: 1,
+        // background: "rgba(0, 0, 0, 0.3)",
+        // backdropFilter: "blur(10px)",
       }
     );
     gsap.fromTo(
       "#titleTwo",
       {
-        y: 100,
+        x: '-100%',
         opacity: 0,
+        // backdropFilter: "blur(0)",
+        // background: "transparent",
       },
       {
-        ease: "bounce",
-        duration: 1,
-        y: 0,
+        ease: "power3",
+        duration: 1.5,
+        delay: 3,
+        x: 0,
         opacity: 1,
+        // background: "rgba(0, 0, 0, 0.3)",
+        // backdropFilter: "blur(10px)",
       }
     );
     gsap.fromTo(
       "#titleThree",
       {
-        y: 100,
+        x: '100%',
         opacity: 0,
+        // backdropFilter: "blur(0)",
+        // background: "transparent",
       },
       {
-        ease: "bounce",
-        duration: 1.3,
-        y: 0,
+        ease: "power3",
+        duration: 3,
+        x: 0,
         opacity: 1,
+        // background: "rgba(0, 0, 0, 0.3)",
+        // backdropFilter: "blur(10px)",
       }
     );
   }, []);
 
   return (
-    <main className="z-[6] text-dark dark:text-light absolute flex items-center">
-      <div className="flex flex-col gap-6 items-start">
-        <p
-          id="titleOne"
-          className={`text-9xl font-bold dark:text-light text-dark`}
-        >
+    <main className="z-[6] text-black dark:text-white absolute w-screen flex h-screen items-center">
+      <div className="flex flex-col gap-2 items-start">
+        <p id="titleOne" className="text-9xl w-screen font-bold  p-3">
           Hey! my name is
-          <span style={{ color: chosen.value }}> Sean</span>
+          {/* <span style={{ color: chosen.value }}> Sean</span> */}
+          <span> Sean</span>
         </p>
-        <p
+        {/* <p
           id="titleTwo"
           style={{ color: highlight.value }}
           className="text-4xl "
         >
-          I make <span style={{ color: highlight.value }}>shopify</span> themes
-          and web apps
-        </p>
+          I make
+          <span style={{ color: highlight.value }}>shopify</span> 
+          <span>shopify</span>
+          themes and web apps
+        </p> */}
         <p id="titleThree" className="text-9xl">
-          Come say <span style={{ color: chosen.value }}>Hi!</span>
+          {/* Come say <span style={{ color: chosen.value }}>Hi!</span> */}
+          Come say <span>Hi!</span>
         </p>
         {/* <Social /> */}
       </div>
