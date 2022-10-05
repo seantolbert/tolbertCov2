@@ -13,27 +13,21 @@ export default function Title() {
   }, [theme.value]);
 
   useEffect(() => {
-    gsap.fromTo
+    gsap.fromTo;
   }, []);
 
   return (
     <main className="z-[6] text-black dark:text-white absolute w-screen flex h-screen items-center">
       <div className="flex flex-col gap-2 items-start">
-        <p id="titleOne" className="text-9xl w-screen font-bold  p-3">
-          Hey! my name is
-          {/* <span style={{ color: chosen.value }}> Sean</span> */}
-          <span> Sean</span>
-        </p>
-        {/* <p
-          id="titleTwo"
-          style={{ color: highlight.value }}
-          className="text-4xl "
+        <p
+          id="titleOne"
+          className="font-extrabold text-9xl"
         >
-          I make
-          <span style={{ color: highlight.value }}>shopify</span> 
-          <span>shopify</span>
-          themes and web apps
-        </p> */}
+          Hey! my name is
+          <span> Sean</span>
+          {/* <span> Sean</span> */}
+        </p>
+
         <p id="titleThree" className="text-9xl">
           {/* Come say <span style={{ color: chosen.value }}>Hi!</span> */}
           Come say <span>Hi!</span>

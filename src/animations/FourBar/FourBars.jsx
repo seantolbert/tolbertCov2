@@ -13,9 +13,6 @@ export default function AltFourBars() {
 
   useEffect(() => {
     let paintTl = gsap.timeline({ defaults: { ease: "power4" } });
-    let barsLevitation = gsap.timeline({
-      defaults: { ease: "sine.inOut", delay: 1 },
-    });
 
     gsap.to("#Bar1, #HalfBar", {
       duration: 1,
@@ -85,7 +82,6 @@ export default function AltFourBars() {
       y: 0,
       repeat: -1,
       yoyo: true,
-      // stagger: 0.3,
       ease: "bounce.inOut",
       delay: 1,
     });
@@ -100,12 +96,12 @@ export default function AltFourBars() {
       stagger: 0.3,
     });
 
-    gsap.to("#YellowStripe", {
-      duration: 4,
-      hue: "hsl(+=61deg, 50%, 85%)",
-      repeat: -1,
-      yoyo: true,
-    });
+    // gsap.to("#YellowStripe", {
+    //   duration: 4,
+    //   hue: "hsl(+=61deg, 50%, 85%)",
+    //   repeat: -1,
+    //   yoyo: true,
+    // });
   }, []);
 
   return (

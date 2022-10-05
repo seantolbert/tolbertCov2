@@ -3,11 +3,13 @@ import ComponentCard from "./ComponentCard";
 // import { useContext } from "react";
 import { useSignal } from "@preact/signals-react";
 // import { useState } from "react";
-// import { db } from "../../../firebase/config";
-// import { useCollection } from "../../../hooks/useCollection";
+import { useCollection } from "../../../hooks/useCollection";
 
 export default function Gallery() {
-  // const { documents: pens } = useCollection("pens");
+  const { documents: pens } = useCollection("pens");
+
+
+  console.log(pens)
 
   const activePen = useSignal("");
   return (
@@ -33,17 +35,18 @@ export default function Gallery() {
           <a href="https://codepen.io">CodePen</a>.
         </iframe>
         <div className="flex flex-wrap gap-10 ">
-          {/* {pens &&
+          {pens &&
             pens.map((pen) => {
               return (
                 <>
                   <p key={pen.id} className="text-rose-500">
                     success
+                    {pen.url}
                   </p>
                   <ComponentCard url={pen.url} />
                 </>
               );
-            })} */}
+            })}
         </div>
       </div>
     </div>

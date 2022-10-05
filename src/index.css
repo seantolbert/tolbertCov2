@@ -15,13 +15,8 @@ html.dark {
   outline: none;
 }
 
-.codepen {
-  height: 300px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid;
-  margin: 1em 0;
-  padding: 1em;
-}
+/* #titleOne {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
