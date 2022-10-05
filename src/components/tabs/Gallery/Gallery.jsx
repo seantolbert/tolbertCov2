@@ -13,7 +13,7 @@ export default function Gallery() {
   const activePen = useSignal(null);
 
   return (
-    <div className="w-full h-screen flex justify-center my-10 relative">
+    <div className="w-full h-screen flex justify-center my-10">
       <div className="w-4/5 flex justify-center flex-col dark:text-light text-dark text-xl">
         {/* {activePen !== null && (
           <iframe

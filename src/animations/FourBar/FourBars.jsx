@@ -95,17 +95,10 @@ export default function AltFourBars() {
       ease: "sine.inOut",
       stagger: 0.3,
     });
-
-    // gsap.to("#YellowStripe", {
-    //   duration: 4,
-    //   hue: "hsl(+=61deg, 50%, 85%)",
-    //   repeat: -1,
-    //   yoyo: true,
-    // });
   }, []);
 
   return (
-    <div className="flex justify-center relative w-screen">
+    <div className="flex justify-center w-screen relative">
       {/*  */}
       {/* Bar1 + Bar3 */}
       {/*  */}

@@ -17,13 +17,15 @@ function App() {
   const { theme, xPosition, yPosition, showCursor, selected } =
     useContext(AppState);
 
-  useEffect(() => {
-    if (window.matchMedia("(prefers-colorScheme: 'light')").matches) {
-      theme.value = "light";
-    } else {
-      theme.value = "dark";
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.matchMedia("(prefers-colorScheme: 'light')").matches) {
+  //     theme.value = "light";
+  //   } else {
+  //     theme.value = "dark";
+  //   }
+  // }, []);
+
+
 
   useEffect(() => {
     theme.value === "dark"
@@ -39,31 +41,28 @@ function App() {
     showCursor.value = false;
   };
 
-  const handleMouseMove = (e) => {
-    batch(() => {
-      xPosition.value = e.pageX;
-      yPosition.value = e.pageY;
-    });
-  };
+  // const handleMouseMove = (e) => {
+  //   batch(() => {
+  //     xPosition.value = e.pageX;
+  //     yPosition.value = e.pageY;
+  //   });
+  // };
 
   return (
     <div
       className="dark:bg-dark bg-light"
-      onMouseMove={(e) => handleMouseMove(e)}
+      // onMouseMove={(e) => handleMouseMove(e)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {/* <Cursor /> */}
       <ThemeController />
-      <div className="h-screen relative">
-        <FourBars />
-        <Title />
-      </div>
-      <TabSwitcher />
-      {selected.value === "Portfolio" && <PortfolioHome />}
-      {selected.value === "Experience" && <Experience />}
-      {selected.value === "About" && <About />}
-      {selected.value === "Resources" && <Resources />}
+      <Title />
+      {/* <TabSwitcher /> */}
+      {/* {selected.value === "Portfolio" && <PortfolioHome />} */}
+      {/* {selected.value === "Experience" && <Experience />} */}
+      {/* {selected.value === "About" && <About />} */}
+      {/* {selected.value === "Resources" && <Resources />} */}
       {/* {selected.value === "Gallery" && <Gallery />} */}
 
       {/* <Contact /> */}

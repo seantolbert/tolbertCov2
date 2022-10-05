@@ -2,7 +2,7 @@ import { signal } from "@preact/signals-react";
 import Values from "values.js";
 
 function AdminControl() {
-  const theme = signal(null);
+  const theme = signal('dark');
   const chosen = signal("#11cbd1");
   const highlight = signal("#f54842");
   const xPosition = signal(null);
@@ -22,6 +22,7 @@ function AdminControl() {
     yPosition,
     showCursor,
     selected,
+    
     handleThemeSwitch,
   };
 }
