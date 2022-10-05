@@ -21,6 +21,7 @@ function AdminControl() {
     xPosition,
     yPosition,
     showCursor,
+    
     selected,
     
     handleThemeSwitch,

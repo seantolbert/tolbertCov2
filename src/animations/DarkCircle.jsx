@@ -4,12 +4,12 @@ import { AppState } from "../main";
 import Values from "values.js";
 
 export default function DarkCircle() {
-  const { chosen, xPosition, yPosition } = useContext(AppState);
+  const { chosen, xPosition, yPosition, showCursor } = useContext(AppState);
 
   const lightValues = new Values(chosen.value).tints(20);
   const darkValues = new Values(chosen.value).shades(20);
 
-  console.log(window.innerWidth / 2)
+  console.log(window.innerWidth / 2);
 
   useEffect(() => {
     const appearTl = gsap.timeline({
@@ -20,7 +20,7 @@ export default function DarkCircle() {
     });
 
     appearTl
-      .to("#layer1", { opacity: 1, width: "10%", height: "10%" })
+      .to("#layer1", { opacity: 1, width: "50px", height: "50px" })
       .to("#layer2", { opacity: 1, width: "20%", height: "20%" })
       .to("#layer3", { opacity: 1, width: "30%", height: "30%" })
       .to("#layer4", { opacity: 1, width: "40%", height: "40%" })
@@ -42,33 +42,55 @@ export default function DarkCircle() {
       .to("#layer9", { background: `#${darkValues[0].hex}` });
   }, [chosen.value]);
 
+  const handleMouseEnter = () => {
+    showCursor.value = true;
+  };
+
+  const handleMouseLeave = () => {
+    showCursor.value = false;
+    const resetTl = gsap.timeline({
+      defaults: { ease: "elastic", x: 0, y: 0 },
+      duration: 0.2,
+    });
+    resetTl
+      .to("#layer8", {})
+      .to("#layer7", {})
+      .to("#layer6", {})
+      .to("#layer5", {})
+      .to("#layer4", {})
+      .to("#layer3", {})
+      .to("#layer2", {})
+      .to("#layer1", {});
+  };
+
+  console.log(showCursor.value);
+
   const handleMouseMove = (e) => {
-    let x;
-    let y;
-    x = e.pageX - window.innerWidth / 2;
-    y = e.pageY - window.innerHeight / 2;
+      let x = e.pageX - window.innerWidth / 2;
+      let y = e.pageY - window.innerHeight / 2;
     const cursorTl = gsap.timeline({
       defaults: {
-        ease: "elastic",
-        x: x,
-        y: y,
-        duration: 0.2,
+        ease: "power2",
+        x: x / 3,
+        y: y / 3,
       },
     });
     cursorTl
-      .to("#layer1", {})
-      .to("#layer2", {})
-      .to("#layer3", {})
-      .to("#layer4", {})
-      .to("#layer5", {})
-      .to("#layer6", {})
-      .to("#layer7", {})
-      .to("#layer8", {});
+      .to("#layer1", { duration: 0.2 })
+      .to("#layer2", { duration: 0.25 })
+      .to("#layer3", { duration: 0.3 })
+      .to("#layer4", { duration: 0.35 })
+      .to("#layer5", { duration: 0.4 })
+      .to("#layer6", { duration: 0.45 })
+      .to("#layer7", { duration: 0.5 })
+      .to("#layer8", { duration: 0.55 });
   };
 
   return (
     <div
       onMouseMove={(e) => handleMouseMove(e)}
+      //   onMouseEnter={handleMouseEnter}
+    //   onMouseLeave={handleMouseLeave}
       className="flex h-screen w-screen absolute justify-center items-center"
     >
       <div

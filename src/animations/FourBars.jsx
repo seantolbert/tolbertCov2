@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useContext } from "react";
-import { AppState } from "../../main";
+import { AppState } from "../main";
 import gsap from "gsap";
-import BlueStripe from "../../assets/BluePaint.png";
-import RedStripe from "../../assets/RedPaint.png";
-import YellowStripe from "../../assets/YellowPaint.png";
-import Bar from "../../assets/NegBar.png";
-import HalfBar from "../../assets/NegBarHalf.png";
+import BlueStripe from "../assets/BluePaint.png";
+import RedStripe from "../assets/RedPaint.png";
+import YellowStripe from "../assets/YellowPaint.png";
+import Bar from "../assets/NegBar.png";
+import HalfBar from "../assets/NegBarHalf.png";
 
 export default function AltFourBars() {
   const { theme } = useContext(AppState);

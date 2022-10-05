@@ -11,7 +11,7 @@ import Resources from "./components/tabs/Resources";
 import Experience from "./components/tabs/Experience";
 import Gallery from "./components/tabs/Gallery/Gallery";
 import Contact from "./components/Contact";
-import FourBars from "./animations/FourBar/FourBars";
+import FourBars from "./animations/FourBars";
 
 function App() {
   const { theme, xPosition, yPosition, showCursor, selected } =
