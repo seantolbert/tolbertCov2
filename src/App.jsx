@@ -55,14 +55,16 @@ function App() {
     >
       {/* <Cursor /> */}
       <ThemeController />
-      <FourBars />
-      <Title />
-      {/* <TabSwitcher /> */}
+      <div className="h-screen relative">
+        <FourBars />
+        <Title />
+      </div>
+      <TabSwitcher />
       {selected.value === "Portfolio" && <PortfolioHome />}
       {selected.value === "Experience" && <Experience />}
       {selected.value === "About" && <About />}
       {selected.value === "Resources" && <Resources />}
-      {selected.value === "Gallery" && <Gallery />}
+      {/* {selected.value === "Gallery" && <Gallery />} */}
 
       {/* <Contact /> */}
     </div>
