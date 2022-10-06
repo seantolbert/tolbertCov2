@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useContext } from "react";
 import { AppState } from "../main";
 import gsap from "gsap";
@@ -8,6 +8,7 @@ import DarkCircle from "../animations/DarkCircle";
 
 export default function Title() {
   const { theme, highlight, chosen } = useContext(AppState);
+  const titleRef = useRef();
 
   useEffect(() => {
     theme.value === "dark"
@@ -18,7 +19,7 @@ export default function Title() {
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3" } });
     tl.fromTo(
-      "#moon, #piece",
+      "#moon, #piece, #moon2, #piece2",
       {
         x: "-400px",
       },
@@ -27,10 +28,38 @@ export default function Title() {
         ease: "elastic.out",
         x: 0,
       }
-    ).to("#moon, #piece", {
-      duration: 1.5,
-      boxShadow: "0px 0px 105px 45px rgba(252,211,77,0.9)",
-    });
+    )
+      .to("#moon, #piece", {
+        duration: 2,
+        boxShadow: "0px 0px 105px 45px rgba(252,211,77,0.9)",
+      })
+      .to(
+        "#piece2, #moon2",
+        {
+          scaleY: 1.3,
+          duration: 1,
+          boxShadow: "0px 0px 105px 45px rgba(252,211,77,0.9)",
+        },
+        "-=1"
+      )
+      .fromTo(
+        "#titleOne, #titleTwo",
+        {
+          x: "-2000px",
+        },
+        {
+          duration: 2,
+          ease: "rough",
+          x: 0,
+          opacity: 1,
+        }
+      )
+      .to("#moon, #piece", {
+        x: "1000px",
+        opacity: 0,
+        duration: 3,
+        repeat: -1
+      }, "-=1");
 
     // tl.fromTo(
     //   "#piece, #moon",
@@ -95,16 +124,17 @@ export default function Title() {
             id="moon"
             className="scale-x-50 border-[20px] border-t-amber-300  border-r-amber-300  border-b-amber-300  border-l-transparent absolute w-[400px] h-[400px] rounded-full"
           ></div>
-          {/* <div
-            id="moon2"
-            className="border-[20px] border-t-amber-300  border-r-amber-300  border-b-amber-300  border-l-transparent absolute w-[400px] h-[400px] rounded-full opacity-0"
-          ></div>
           <div
+            id="moon2"
+            className="border-[20px] scale-x-50 border-t-amber-300  border-r-amber-300  border-b-amber-300  border-l-transparent absolute w-[400px] h-[400px] rounded-full"
+          ></div>
+          {/* <div
             id="moon3"
             className="border-[20px] border-t-amber-300  border-r-amber-300  border-b-amber-300  border-l-transparent absolute w-[400px] h-[400px] rounded-full opacity-0"
           ></div> */}
           <p
             id="titleOne"
+            ref={titleRef}
             className="p-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-cyan-500 text-9xl z-[1]"
           >
             Hey! my name is Sean
@@ -119,10 +149,10 @@ export default function Title() {
             id="piece"
             className="z-[2] scale-x-50 border-[20px] border-l-amber-300 border-y-transparent border-r-transparent absolute w-[400px] h-[400px] rounded-full"
           ></div>
-          {/* <div
+          <div
             id="piece2"
-            className="border-[20px] border-l-amber-300  border-y-transparent border-r-transparent absolute w-[400px] h-[400px] rounded-full opacity-0"
-          ></div> */}
+            className="z-[2] border-[20px] scale-x-50 border-l-amber-300  border-y-transparent border-r-transparent absolute w-[400px] h-[400px] rounded-full"
+          ></div>
           {/* <div
             id="piece3"
             className="border-[20px] border-l-amber-300  border-y-transparent border-r-transparent absolute w-[400px] h-[400px] rounded-full opacity-0"
