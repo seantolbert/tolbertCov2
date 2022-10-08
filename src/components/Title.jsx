@@ -2,12 +2,12 @@ import { useEffect, useRef } from "react";
 import { useContext } from "react";
 import { AppState } from "../main";
 import gsap from "gsap";
-import Logo from "../assets/small_tolbert&co.png";
-import FourBars from "../animations/FourBars";
-import DarkCircle from "../animations/DarkCircle";
+// import Logo from "../assets/small_tolbert&co.png";
+// import FourBars from "../animations/FourBars";
+// import DarkCircle from "../animations/DarkCircle";
 
 export default function Title() {
-  const { theme, highlight, chosen } = useContext(AppState);
+  const { theme } = useContext(AppState);
   const titleRef = useRef();
 
   useEffect(() => {
@@ -54,67 +54,24 @@ export default function Title() {
           opacity: 1,
         }
       )
-      .to("#moon, #piece", {
-        x: "1000px",
-        opacity: 0,
-        duration: 3,
-        repeat: -1
-      }, "-=1");
-
-    // tl.fromTo(
-    //   "#piece, #moon",
-    //   {
-    //     x: "-2000px",
-    //   },
-    //   {
-    //     ease: "power3",
-    //     x: "250px",
-    //     duration: 0.5,
-    //     opacity: 1,
-    //   }
-    // )
-    //   .fromTo(
-    //     "#piece2, #moon2",
-    //     {
-    //       x: "-2000px",
-    //     },
-    //     {
-    //       ease: "power3",
-    //       x: "175px",
-    //       duration: 0.5,
-    //       opacity: 1,
-    //     }
-    //   )
-    //   .fromTo(
-    //     "#piece3, #moon3",
-    //     {
-    //       x: "-2000px",
-    //     },
-    //     {
-    //       ease: "power3",
-    //       x: "100px",
-    //       duration: 0.5,
-    //       opacity: 1,
-    //     }
-    //   )
-    //   .to("#titleOne, #titleTwo", {
-    //     duration: 2,
-    //     ease: "rough",
-    //     x: 0,
-    //     opacity: 1,
-    //   })
-    //   .to("#piece, #moon, #piece2, #moon2, #piece3, #moon3", {
-    //     x: "-100px",
-    //     duration: 1,
-    //   })
-    //   .to("#piece, #moon", { x: "1000px", opacity: 0, duration: 0.2 })
-    //   .to("#piece2, #moon2", { x: "1000px", opacity: 0, duration: 0.2 })
-    //   .to("#piece3, #moon3", { x: "1000px", opacity: 0, duration: 0.2 });
+      .to(
+        "#moon, #piece",
+        {
+          x: "1000px",
+          opacity: 0,
+          duration: 3,
+          repeat: -1,
+        },
+        "-=1"
+      );
   }, []);
 
   // note! what if there was a cool pulsing ring effect on repeat where
   // these rings go over the words from the left as they are (gold rings ofc) and they faded away
   // before hitting the end of the screen
+
+  // make the ring cover client height of the div over both title 1 nd title 2 and have the
+  // ring travel to the end of that div's width so it can be viewd on mobile as well
 
   return (
     <>
@@ -128,10 +85,6 @@ export default function Title() {
             id="moon2"
             className="border-[20px] scale-x-50 border-t-amber-300  border-r-amber-300  border-b-amber-300  border-l-transparent absolute w-[400px] h-[400px] rounded-full"
           ></div>
-          {/* <div
-            id="moon3"
-            className="border-[20px] border-t-amber-300  border-r-amber-300  border-b-amber-300  border-l-transparent absolute w-[400px] h-[400px] rounded-full opacity-0"
-          ></div> */}
           <p
             id="titleOne"
             ref={titleRef}
@@ -153,10 +106,6 @@ export default function Title() {
             id="piece2"
             className="z-[2] border-[20px] scale-x-50 border-l-amber-300  border-y-transparent border-r-transparent absolute w-[400px] h-[400px] rounded-full"
           ></div>
-          {/* <div
-            id="piece3"
-            className="border-[20px] border-l-amber-300  border-y-transparent border-r-transparent absolute w-[400px] h-[400px] rounded-full opacity-0"
-          ></div> */}
         </div>
       </main>
     </>
