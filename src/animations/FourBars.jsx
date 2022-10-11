@@ -84,6 +84,7 @@ export default function AltFourBars() {
       yoyo: true,
       ease: "bounce.inOut",
       delay: 1,
+      // filter: "blur(5px)"
     });
 
     gsap.to(".stripe", {
@@ -94,6 +95,7 @@ export default function AltFourBars() {
       delay: 3,
       ease: "sine.inOut",
       stagger: 0.3,
+      // filter: "invert(1)"
     });
   }, []);
 

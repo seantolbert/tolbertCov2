@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,8 +17,6 @@ html.dark {
   outline: none;
 }
 
-/* #titleOne {
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+body {
+  overflow: hidden;
+}

@@ -7,7 +7,7 @@ export default function TabSwitcher() {
   const pages = ["Portfolio", "Experience", "Resources", "About", "Gallery"];
 
   return (
-    <div className="mt-10 w-full text-2xl flex justify-start md:justify-center gap-24">
+    <div id="tabSwitcher" className="mt-10 w-full text-2xl flex justify-evenly">
       {pages.map((page) => (
         <button
           onClick={() => {

@@ -12,6 +12,12 @@ import Experience from "./components/tabs/Experience";
 import Gallery from "./components/tabs/Gallery/Gallery";
 import Contact from "./components/Contact";
 import FourBars from "./animations/FourBars";
+import Scroll from "./animations/Scroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import Title2 from "./components/Title2";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const { theme, xPosition, yPosition, showCursor, selected } =
@@ -25,7 +31,20 @@ function App() {
   //   }
   // }, []);
 
-
+  // gsap.fromTo(
+  //   "#tabSwitcher",
+  //   { x: "-1000px" },
+  //   {
+  //     x: 0,
+  //     scrollTrigger: {
+  //       trigger: "#tabSwitcher",
+  //       start: "top 50%",
+  //       end: "bottom 60%",
+  //       markers: true,
+  //       scrub: 1,
+  //     },
+  //   }
+  // );
 
   useEffect(() => {
     theme.value === "dark"
@@ -56,8 +75,11 @@ function App() {
       onMouseLeave={handleMouseLeave}
     >
       {/* <Cursor /> */}
-      <ThemeController />
-      <Title />
+      {/* <Scroll /> */}
+      {/* <ThemeController /> */}
+      <FourBars />
+      <Title2 />
+      {/* <Title /> */}
       {/* <TabSwitcher /> */}
       {/* {selected.value === "Portfolio" && <PortfolioHome />} */}
       {/* {selected.value === "Experience" && <Experience />} */}
