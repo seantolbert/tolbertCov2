@@ -42,26 +42,26 @@ export default function DarkCircle() {
       .to("#layer9", { background: `#${darkValues[0].hex}` });
   }, [chosen.value]);
 
-  const handleMouseEnter = () => {
-    showCursor.value = true;
-  };
+  // const handleMouseEnter = () => {
+  //   showCursor.value = true;
+  // };
 
-  const handleMouseLeave = () => {
-    showCursor.value = false;
-    const resetTl = gsap.timeline({
-      defaults: { ease: "elastic", x: 0, y: 0 },
-      duration: 0.2,
-    });
-    resetTl
-      .to("#layer8", {})
-      .to("#layer7", {})
-      .to("#layer6", {})
-      .to("#layer5", {})
-      .to("#layer4", {})
-      .to("#layer3", {})
-      .to("#layer2", {})
-      .to("#layer1", {});
-  };
+  // const handleMouseLeave = () => {
+  //   showCursor.value = false;
+  //   const resetTl = gsap.timeline({
+  //     defaults: { ease: "elastic", x: 0, y: 0 },
+  //     duration: 0.2,
+  //   });
+  //   resetTl
+  //     .to("#layer8", {})
+  //     .to("#layer7", {})
+  //     .to("#layer6", {})
+  //     .to("#layer5", {})
+  //     .to("#layer4", {})
+  //     .to("#layer3", {})
+  //     .to("#layer2", {})
+  //     .to("#layer1", {});
+  // };
 
   console.log(showCursor.value);
 
@@ -89,8 +89,6 @@ export default function DarkCircle() {
   return (
     <div
       onMouseMove={(e) => handleMouseMove(e)}
-      //   onMouseEnter={handleMouseEnter}
-    //   onMouseLeave={handleMouseLeave}
       className="flex h-screen w-screen absolute justify-center items-center"
     >
       <div

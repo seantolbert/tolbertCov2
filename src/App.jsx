@@ -20,31 +20,7 @@ import Title2 from "./components/Title2";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const { theme, xPosition, yPosition, showCursor, selected } =
-    useContext(AppState);
-
-  // useEffect(() => {
-  //   if (window.matchMedia("(prefers-colorScheme: 'light')").matches) {
-  //     theme.value = "light";
-  //   } else {
-  //     theme.value = "dark";
-  //   }
-  // }, []);
-
-  // gsap.fromTo(
-  //   "#tabSwitcher",
-  //   { x: "-1000px" },
-  //   {
-  //     x: 0,
-  //     scrollTrigger: {
-  //       trigger: "#tabSwitcher",
-  //       start: "top 50%",
-  //       end: "bottom 60%",
-  //       markers: true,
-  //       scrub: 1,
-  //     },
-  //   }
-  // );
+  const { theme } = useContext(AppState);
 
   useEffect(() => {
     theme.value === "dark"
@@ -52,33 +28,12 @@ function App() {
       : document.documentElement.classList.remove("dark");
   }, [theme.value]);
 
-  const handleMouseEnter = () => {
-    showCursor.value = true;
-  };
-
-  const handleMouseLeave = () => {
-    showCursor.value = false;
-  };
-
-  // const handleMouseMove = (e) => {
-  //   batch(() => {
-  //     xPosition.value = e.pageX;
-  //     yPosition.value = e.pageY;
-  //   });
-  // };
-
   return (
-    <div
-      className="dark:bg-dark bg-light"
-      // onMouseMove={(e) => handleMouseMove(e)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="dark:bg-dark bg-light">
       {/* <Cursor /> */}
-      {/* <Scroll /> */}
-      {/* <ThemeController /> */}
-      <FourBars />
+      <ThemeController />
       <Title2 />
+      <FourBars />
       {/* <Title /> */}
       {/* <TabSwitcher /> */}
       {/* {selected.value === "Portfolio" && <PortfolioHome />} */}
